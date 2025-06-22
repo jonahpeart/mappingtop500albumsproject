@@ -1,0 +1,482 @@
+* {
+    font-family: "Public Sans", serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100dvh;
+}
+
+#map {
+    height: 100%;
+    width: 100vw;
+}
+
+.leaflet-touch .leaflet-control-attribution,
+.leaflet-touch .leaflet-control-layers,
+.leaflet-touch .leaflet-bar {
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.marker-cluster {
+    background: transparent;
+}
+
+.marker-cluster-small div {
+    width: 50px !important;
+    height: 50px !important;
+    line-height: 50px !important;
+}
+
+.marker-cluster-medium div {
+    width: 70px !important;
+    height: 70px !important;
+    line-height: 70px !important;
+}
+
+.marker-cluster-large div {
+    width: 90px !important;
+    height: 90px !important;
+    line-height: 90px !important;
+}
+
+.marker-cluster-large div,
+.marker-cluster-small div,
+.marker-cluster-medium div {
+    background-color: transparent;
+    background-image: url(/assets/marker-icons/cluster-static.png);
+    background-size: contain;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+.marker-cluster-large div:hover,
+.marker-cluster-small div:hover,
+.marker-cluster-medium div:hover {
+    background-image: url(/assets/marker-icons/cluster-hover.png);
+}
+
+.popupCustom .leaflet-popup-tip,
+.popupCustom .leaflet-popup-content-wrapper {
+    background-color: rgba(255, 255, 255, 0);
+    box-shadow: none;
+}
+
+.popupCustom .leaflet-popup-close-button {
+    display: none;
+}
+
+.dropbtn {
+    background-color: #e7e7e7;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 5px;
+    font-size: .75rem;
+    cursor: pointer;
+    align-self: center;
+    border-radius: 0 0 3px 0;
+    width: 200px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgb(0, 0, 0);
+    border-top: none;
+    overflow-y: auto;
+    max-height: 10rem;
+    border-radius: 0 0 5px 5px;
+}
+
+.dropdown-content a {
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #c4c4c4;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 1px;
+}
+
+.studio-nolink {
+    color: rgb(0, 0, 0);
+    cursor: default;
+    text-decoration: none;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #c4c4c4;
+}
+
+.studio-dropdown-item:hover {
+    background-color: #e4e4e4;
+}
+
+.popup {
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    border: 1px solid black;
+}
+
+.cover {
+    width: 200px;
+    height: 200px;
+}
+
+.cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 3px 0 0 3px;
+}
+
+.album-info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 200px;
+    height: 200px;
+}
+
+.studio-source-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.album-popup-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.notes,
+.rank {
+    font-size: .75rem;
+}
+
+.info-container,
+.notes {
+    padding-left: 5px;
+}
+
+.material-symbols-outlined {
+    font-size: 1rem;
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 16
+}
+
+.introduction-modal {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 600px;
+    /* border: solid 1px black; */
+    height: 50%;
+    border-radius: 5px;
+    background-size: cover;
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; */
+    padding: 2em;
+}
+
+
+.information-modal {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 60%;
+    height: 85%;
+    overflow-y: scroll;
+    border: solid 1px black;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    padding: 2em;
+}
+
+.modal-title {
+    width: 100%;
+}
+
+.RollingStoneLogo img {
+    width: 25rem;
+}
+
+.intro-modal-window {
+    backdrop-filter: blur(2px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    z-index: 9999;
+    background: #ffffff;
+background: radial-gradient(circle,rgba(255, 255, 255, 0.681) 35%, rgba(255, 255, 255, 0) 100%);
+}
+
+.info-modal-window {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.200);
+}
+
+.title-topleft, .title-bottomright {
+    font-size: 1.5rem;
+}
+
+
+.intro-modal-text,
+.info-modal-text {
+    line-height: 1.5rem;
+}
+
+.explore-map-btn {
+    background-color: rgba(255, 255, 255, 0.615);
+    color: black;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 15px 30px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border: 1px solid black;
+    box-shadow: 0 0 0 0 black;
+}
+
+.explore-map-btn:hover {
+    transform: translateY(-4px) translateX(-2px);
+    box-shadow: 1px 3px 0 0 black;
+}
+
+.info-button {
+    position: absolute;
+    z-index: 500;
+    width: 31px;
+    height: 31px;
+    top: 5rem;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.open-info-btn {
+    position: absolute;
+    font-size: 30px;
+    font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 16;
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 500;
+    top: 5rem;
+    left: 10px;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: font-variation-settings 0.1s ease;
+}
+
+.open-info-btn:hover {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 16;
+}
+
+.info-gif {
+    width: 100%;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+details {
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    padding: 0.5em 0.5em 0;
+    width: 100%;
+}
+
+summary {
+    font-weight: bold;
+    margin: -0.5em -0.5em 0;
+    padding: 0.5em;
+    cursor: pointer;
+}
+
+details[open] {
+    padding: 0.5em;
+}
+
+details[open] summary {
+    border-bottom: 1px solid #aaa;
+    margin-bottom: 0.5em;
+}
+
+#unknown-albums {
+    display: flex;
+    flex-direction: column;
+}
+
+.unknown-popup {
+    display: flex;
+    position: relative;
+    border: none;
+    border-bottom: 1px #aaa solid;
+    padding: .5rem 0;
+    align-items: center;
+}
+
+.unknown-location-cover {
+    min-width: 100px;
+    height: 100px;
+}
+
+.unknown-location-cover img {
+    width: 100%;
+    height: 100%;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.social-links a img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.1s ease;
+}
+
+.social-links a:hover img {
+    transform: scale(1.1);
+}
+
+.close-info-modal-btn {
+    position: absolute;
+    top: 8%;
+    right: 20.5%;
+    padding: 5px;
+    cursor: pointer;
+    align-self: flex-end;
+    z-index: 999;
+}
+
+.close-info-modal-btn:hover svg path {
+    stroke: black;
+}
+
+
+
+
+
+.container {
+top: 22%;
+left: 49%;
+  position: absolute;
+  perspective: 1000px;
+}
+
+.disc {
+  width: 15rem;
+  height: 15rem;
+  transform-style: preserve-3d;
+  animation: spin 9s linear infinite;
+  position: relative;
+  z-index: 1;
+}
+
+.disc::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #333;
+  border-radius: 50%;
+  background-image: url(../assets/other/vinyl.png);
+  background-size: cover;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  
+}
+
+@keyframes spin {
+  0% {
+    transform: rotateX(60deg) rotateZ(0deg) rotateY(10deg);
+  }
+  100% {
+    transform: rotateX(60deg) rotateZ(360deg) rotateY(10deg);
+  }
+}
+
+
+@media (max-width: 800px) {
+    .popup {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .album-info-container {
+        height: 100%;
+        gap: 1.5rem;
+    }
+    .RollingStoneLogo img {
+    width: 18rem;
+}
+
+    .cover img {
+        border-radius: 3px 3px 0 0;
+    }
+
+    .dropbtn {
+        border-radius: 0 0 3px 3px;
+    }
+
+    .introduction-modal,
+    .information-modal {
+        width: 90%;
+        padding: 1rem;
+    }
+
+    .close-info-modal-btn {
+        right: 5.5%;
+    }
+    .disc{
+        width: 10rem;
+        height: 10rem;
+    }
+    .container{
+        top: 23%;
+    }
+}
+

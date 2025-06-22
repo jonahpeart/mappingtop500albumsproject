@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Mapping The Greatest Albums</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css" />
+    <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=info" />
+    <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+  <div class="intro-modal-window">
+    
+    <div class="container">
+  <div class="shadow"></div>
+  <div class="disc"></div>
+</div>
+
+
+    <div class="introduction-modal">
+    
+      
+      <div class="modal-title">
+        <p class="title-topleft">Mapping The</p>
+        <a class="RollingStoneLogo" href="https://www.rollingstone.com/music/music-lists/best-albums-of-all-time-1062063/">
+          <img src="./assets/other/RollingStoneLogo.png" alt="Rolling Stone Logo">
+        </a>
+        <p class="title-bottomright">Top 500 Albums</p>
+      </div>
+      <p class="intro-modal-text">
+Where were the greatest albums recorded? Explore the map and discover the spatial patterns of music! Click the info button in the top left for more information.
+      </p>
+      <button class="explore-map-btn">Explore Map</button>
+    </div>
+  </div>
+  <div class="info-modal-window">
+    <span class="close-info-modal-btn"><svg width="28" height="28" viewbox="0 0 40 40"><path d="M 10,10 L 30,30 M 30,10 L 10,30" stroke="#444444" stroke-width="3" /></svg></span>
+    <div class="information-modal">
+      <h1>Information</h1>
+      <p class="info-modal-text">
+Albums can be recorded at many studios. 
+Each marker on the map indicates one studio where 
+an album was recorded (or partly recorded).
+To see the other studios an album was recorded, 
+hover over the “other studios” dropdown.
+Some studio locations are private or there is 
+simply not enough information to properly geocode. 
+In the dropdown menu, studios that appear in blue 
+have a known location. Once clicked, the map will 
+take you to its location. Studios with an unknown 
+location appear in a black font and, if applicable, 
+a rough location of that studio is provided in parentheses. 
+        </p>
+      <img class="info-gif" src="./assets/other/info-gif.gif" alt="Simple tutorial on how to navigate the map and its markers">
+      <p class="info-modal-text">
+Click the <span class="material-symbols-outlined">info</span>
+ in the bottom right of each marker popup to see the 
+ source of the information. Many of the sources were 
+ extracted from liner notes or credits that were provided 
+ by Discogs. In addition, Wikipedia often provides a 
+ list of studios. In the case of Wikipedia, page sources 
+ were consulted to ensure the information was legitimate. 
+ In certain cases, such as Bob Dylan or The Beatles albums, 
+ a book was the source. Keep in mind that the information 
+ is not exhaustive and not all studio locations are verified 
+ and are subject to potential errors. I tried my best to 
+ diligently research and locate these studios.
+          </p>
+      <p class="info-modal-text">
+It is important to note that the complete production of an 
+album can take place at many studios. To illustrate, an 
+album can be mixed, mastered, pressed, and cut at many 
+different locations. Only the studios at which the albums 
+were recorded were included. In addition, there are a 
+few albums where no studios have a known location. 
+In this case, they do not appear anywhere on the map.
+      </p>
+      <details class="unknown-albums-list">
+      <summary>Here is a list of those studios</summary>
+        <div id="unknown-albums">
+        </details>
+        <p class="info-modal-text">
+This project is based on The Rolling Stone's Top 500 Albums 
+of All Time list. Full credit is given to Rolling Stone for 
+curating the original list. Additional thanks to Discogs for 
+their comprehensive database of album and recording information 
+and Leaflet for providing a free, open-source framework for 
+interactive web mapping. It truly is an amazing library. 
+This map was created for educational and informational 
+purposes only. All rights to the album data and associated 
+information remain with their respective owners.
+        </p>
+        <p class="info-modal-text">Created by Jonah Peart</p>
+      <div class="social-links">
+        <a href="https://github.com/jonahpeart" target="_blank" aria-label="GitHub">
+          <img src="./assets/social-icons/github-icon.svg" alt="GitHub">
+        </a>
+        <a href="https://www.linkedin.com/in/jonahpeart" target="_blank" aria-label="LinkedIn">
+          <img src="./assets/social-icons/linkedin-icon.svg" alt="LinkedIn">
+        </a>
+      </div>
+    </div>
+  </div>
+<span class="open-info-btn material-symbols-outlined">info</span>
+<div id="map"></div>
+
+<script type="module" src="./js/main.js"></script>
+</body>
+</html>
