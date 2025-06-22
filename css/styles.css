@@ -48,7 +48,7 @@ body {
 .marker-cluster-small div,
 .marker-cluster-medium div {
     background-color: transparent;
-    background-image: url(/assets/marker-icons/cluster-static.png);
+    background-image: url(../assets/marker-icons/cluster-static.png);
     background-size: contain;
     border-radius: 50px;
     font-size: 1.5rem;
@@ -58,7 +58,7 @@ body {
 .marker-cluster-large div:hover,
 .marker-cluster-small div:hover,
 .marker-cluster-medium div:hover {
-    background-image: url(/assets/marker-icons/cluster-hover.png);
+    background-image: url(../assets/marker-icons/cluster-hover.png);
 }
 
 .popupCustom .leaflet-popup-tip,
