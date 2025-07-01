@@ -1,7 +1,7 @@
 import { buildPopupTemplate, buildDropdownTemplate, buildUnknownAlbumTemplate } from './templates.js';
 
 const bounds = [[-90, -180], [90, 180]];
-const map = L.map('map', { maxBounds: bounds, maxBoundsViscosity: 1 }).setView([35.505, -30], 4);
+const map = L.map('map', { maxBounds: bounds, maxBoundsViscosity: 1 }).setView([35.505, -60], 4);
 L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
   attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
   subdomains: 'abcd',

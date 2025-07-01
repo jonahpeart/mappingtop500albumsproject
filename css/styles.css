@@ -361,7 +361,6 @@ details[open] summary {
 }
 
 .unknown-location-cover img {
-    width: 100%;
     height: 100%;
 }
 
@@ -403,8 +402,8 @@ left: 49%;
 }
 
 .disc {
-  width: 15rem;
-  height: 15rem;
+  width: 14rem;
+  height: 14rem;
   transform-style: preserve-3d;
   animation: spin 9s linear infinite;
   position: relative;
@@ -468,8 +467,8 @@ left: 49%;
         right: 5.5%;
     }
     .disc{
-        width: 12rem;
-        height: 12rem;
+        width: 10rem;
+        height: 10rem;
     }
     .container{
         top: 23%;
