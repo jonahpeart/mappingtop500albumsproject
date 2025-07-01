@@ -356,7 +356,7 @@ details[open] summary {
 }
 
 .unknown-location-cover {
-    min-width: 100px;
+    width: 100px;
     height: 100px;
 }
 
@@ -394,10 +394,6 @@ details[open] summary {
 .close-info-modal-btn:hover svg path {
     stroke: black;
 }
-
-
-
-
 
 .container {
 top: 22%;
@@ -472,8 +468,8 @@ left: 49%;
         right: 5.5%;
     }
     .disc{
-        width: 10rem;
-        height: 10rem;
+        width: 12rem;
+        height: 12rem;
     }
     .container{
         top: 23%;
