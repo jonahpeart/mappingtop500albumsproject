@@ -2,13 +2,19 @@ import { buildPopupTemplate, buildDropdownTemplate, buildUnknownAlbumTemplate } 
 
 const bounds = [[-90, -180], [90, 180]];
 const map = L.map('map', { maxBounds: bounds, maxBoundsViscosity: 1 }).setView([35.505, -60], 4);
-L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-  attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
-  subdomains: 'abcd',
-  noWrap: true,
-  minZoom: 3,
-  maxZoom: 20,
+
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    minzoon: 3,
+    maxZoom: 20,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
+// L.tileLayer('https://arcgisonline.com{z}/{y}/{x}', {
+//   attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+//   subdomains: 'abcd',
+//   noWrap: true,
+//   minZoom: 3,
+//   maxZoom: 20,
+// }).addTo(map);
 
 const markers = L.markerClusterGroup({
   spiderfyOnMaxZoom: true,
